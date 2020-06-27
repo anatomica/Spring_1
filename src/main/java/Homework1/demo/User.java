@@ -1,4 +1,4 @@
-package demo;
+package Homework1.demo;
 
 public class User {
     private Long id;

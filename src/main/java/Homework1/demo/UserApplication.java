@@ -1,4 +1,4 @@
-package demo;
+package Homework1.demo;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

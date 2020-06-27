@@ -1,4 +1,4 @@
-package market2;
+package Homework1.market2;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

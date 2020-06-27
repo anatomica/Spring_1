@@ -1,16 +1,14 @@
-package demo;
+package Homework1.market2;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ComponentScan(basePackages = {"demo"})
-public class UserApplicationConfig {
+@ComponentScan(basePackages = {"Homework1.market2"})
+public class Market2Config {
     @Bean
-    public Square square() {
-        Square out = new Square(10);
-        out.setArea(50);
-        return out;
+    public String strBean() {
+        return "strBean";
     }
 }

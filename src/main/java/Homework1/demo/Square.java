@@ -1,4 +1,4 @@
-package demo;
+package Homework1.demo;
 
 public class Square {
     private int area;

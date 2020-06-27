@@ -1,9 +1,8 @@
-package market2;
+package Homework1.market2;
 
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 

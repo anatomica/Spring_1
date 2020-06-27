@@ -1,4 +1,4 @@
-package demo;
+package Homework1.demo;
 
 import org.springframework.stereotype.Component;
 import java.util.List;
