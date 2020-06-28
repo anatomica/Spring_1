@@ -29,12 +29,14 @@
     <div class="content">
         <h1 class="storeName">Добавить новый товар:</h1>
         <br>
-        <!--/*@thymesVar id="product" type="Homework2.model.Product"*/-->
-        <form th:action="@{/products/add}" method="POST">
-            <input type="text" name="title" placeholder="Введите название товара"/>
-            <input type="text" name="cost" placeholder="Введите цену товара"/>
-            <input type="submit"/>
-        </form>
+        <div class="textOnCenter">
+            <!--/*@thymesVar id="product" type="Homework2.model.Product"*/-->
+            <form th:action="@{/products/add}" method="POST">
+                <input type="text" name="title" placeholder="Введите название товара"/>
+                <input type="text" name="cost" placeholder="Введите цену товара"/>
+                <input type="submit"/>
+            </form>
+        </div>
     </div>
 </div>
 

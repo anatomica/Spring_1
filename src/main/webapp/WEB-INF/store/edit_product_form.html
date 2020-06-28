@@ -29,16 +29,20 @@
     <div class="content">
         <h1 class="storeName">Изменить данные:</h1>
         <br>
-        <!--/*@thymesVar id="product" type="Homework2.model.Product"*/-->
-        <form th:action="@{/products/edit}" th:object="${product}" method="POST">
-            <input hidden th:field="*{id}"/>
-            <br>
-            Name: <input th:field="*{title}"/>
-            <br>
-            Score: <input th:field="*{cost}"/>
-            <br>
-            <input type="submit" value="Submit" />
-        </form>
+        <div class="textOnCenter">
+            <!--/*@thymesVar id="product" type="Homework2.model.Product"*/-->
+            <form th:action="@{/products/edit}" th:object="${product}" method="POST">
+                <input hidden th:field="*{id}"/>
+                <br>
+                Название: <input th:field="*{title}"/>
+                <br>
+                <br>
+                Цена: <input th:field="*{cost}"/>
+                <br>
+                <br>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
     </div>
 </div>
 
