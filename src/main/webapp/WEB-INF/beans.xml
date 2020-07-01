@@ -18,10 +18,13 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
-    <context:component-scan base-package="Lesson2"/>
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+
+    <context:component-scan base-package="Homework2"/>
 
     <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
-        <property name="prefix" value="/WEB-INF/templates/"/>
+<!--        <property name="prefix" value="/WEB-INF/templates/"/>-->
+        <property name="prefix" value="/WEB-INF/store/"/>
         <property name="suffix" value=".html"/>
         <property name="templateMode" value="HTML"/>
     </bean>
