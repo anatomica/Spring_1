@@ -1,10 +1,13 @@
 package Homework2.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "Client")
-public class Client {
+public class Client implements Serializable {
+    private static final long serialVersionUID = 5830463446510949899L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +16,15 @@ public class Client {
 
     @Column(name = "Name")
     private String name;
+
+    @ManyToMany
+    @JoinTable(
+            name = "orderClient",
+            joinColumns = @JoinColumn(name = "idClient"),
+            inverseJoinColumns = @JoinColumn(name = "idProduct")
+    )
+
+    private List<Product> products;
 
     public Client() {
     }
@@ -38,8 +50,16 @@ public class Client {
         this.name = name;
     }
 
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
+    }
+
     @Override
     public String toString() {
-        return String.format("SimpleItem [id = %d, Name = %s]", id, name);
+        return String.format("Покупатель: [id = %d, Name = %s]", id, name);
     }
 }
