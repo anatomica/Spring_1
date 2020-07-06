@@ -50,16 +50,30 @@ public class ProductsController {
         return "redirect:/products/";
     }
 
+    @GetMapping("/find_product")
+    public String showFindForm() {
+        return "find_product_form";
+    }
+
     @GetMapping("/find_by_minCost")
-    public String findByMinCost(Model model, @RequestParam int cost) {
-        List<Product> products = productsServices.findByMinCost(cost);
+    public String findByMinCost(Model model, @RequestParam int minCost) {
+        List<Product> products = productsServices.findByMinCost(minCost);
         model.addAttribute("products", products);
         return "all_products";
     }
 
     @GetMapping("/find_by_maxCost")
-    public String findByMaxCost(Model model, @RequestParam int cost) {
-        List<Product> products = productsServices.findByMaxCost(cost);
+    public String findByMaxCost(Model model, @RequestParam int maxCost) {
+        List<Product> products = productsServices.findByMaxCost(maxCost);
+        model.addAttribute("products", products);
+        return "all_products";
+    }
+
+    @GetMapping("/find_by_minMaxCost")
+    public String findByMinMaxCost(Model model,
+                                   @RequestParam(required = false) int minCost,
+                                   @RequestParam(required = false) int maxCost) {
+        List<Product> products = productsServices.findByMinMaxCost(minCost, maxCost);
         model.addAttribute("products", products);
         return "all_products";
     }

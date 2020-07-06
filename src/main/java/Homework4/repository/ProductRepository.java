@@ -11,4 +11,5 @@ public interface  ProductRepository extends JpaRepository<Product, Long>, JpaSpe
     Product findOneByTitle(String title);
     List<Product> findAllByCostGreaterThan(int minCost);
     List<Product> findAllByCostLessThan(int maxCost);
+    List<Product> findAllByCostGreaterThanAndCostLessThan(int minCost, int maxCost);
 }

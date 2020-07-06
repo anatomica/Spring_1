@@ -31,12 +31,16 @@ public class ProductsServices {
         return productRepository.findOneByTitle(title);
     }
 
-    public List<Product> findByMinCost(int cost) {
-        return productRepository.findAllByCostGreaterThan(cost);
+    public List<Product> findByMinCost(int minCost) {
+        return productRepository.findAllByCostGreaterThan(minCost);
     }
 
-    public List<Product> findByMaxCost(int cost) {
-        return productRepository.findAllByCostLessThan(cost);
+    public List<Product> findByMaxCost(int maxCost) {
+        return productRepository.findAllByCostLessThan(maxCost);
+    }
+
+    public List<Product> findByMinMaxCost(int minCost, int maxCost) {
+        return productRepository.findAllByCostGreaterThanAndCostLessThan(minCost, maxCost);
     }
 
 }

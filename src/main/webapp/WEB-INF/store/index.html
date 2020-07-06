@@ -19,7 +19,7 @@
                 <li class="menu_list"><a th:href="@{/}" class="menu_link">Главная</a> </li>
                 <li class="menu_list"><a th:href="@{/products}" class="menu_link">Каталог</a></li>
                 <li class="menu_list"><a th:href="@{/products/add}" class="menu_link">Добавить товар</a></li>
-                <li class="menu_list"><a th:href="@{/products/find_by_minCost?cost=49}" class="menu_link">Найти товар по MIN цене</a></li>
+                <li class="menu_list"><a th:href="@{/products/find_product}" class="menu_link">Найти товар по цене</a></li>
             </ul>
         </div>
         <div class="cart">
@@ -33,6 +33,8 @@
         <a class="storeName textOnCenter" th:href="@{/products}">Каталог</a>
         <br>
         <a class="storeName textOnCenter" th:href="@{/products/add}">Добавить товар</a>
+        <br>
+        <a class="storeName textOnCenter" th:href="@{/products/find_product}">Найти товар по цене</a>
         <br>
     </div>
 </div>
