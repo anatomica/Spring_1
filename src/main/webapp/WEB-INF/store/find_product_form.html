@@ -28,31 +28,32 @@
 
     <hr>
     <div class="content">
-        <h1 class="storeName">Список товаров:</h1>
+        <h1 class="storeName">Найти товар по MIN & MAX ценам:</h1>
         <br>
         <div class="textOnCenter">
-            <table class="table">
-                <thead>
-                <tr>
-                    <td>ID Товара</td>
-                    <td>Название</td>
-                    <td>Цена</td>
-                    <td>Операции</td>
-                </tr>
-                </thead>
-                <tbody>
-                <!--/*@thymesVar id="products" type="Homework2.model.Product"*/-->
-                <tr th:each="product : ${products}">
-                    <td th:text="${product.id}"></td>
-                    <td th:text="${product.title}" class="textInLongView"></td>
-                    <td th:text="${product.cost}"></td>
-                    <td><a th:href="@{'/products/edit/' + ${product.id}}" class="textInLongView">Редактировать</a></td>
-                </tr>
-                </tbody>
-            </table>
-<!--            <form th:action="@{'/products/'}">-->
-<!--                <button class="button" type="submit">Следующая стр.</button>-->
-<!--            </form>-->
+            <form th:action="@{/products/find_by_minMaxCost}" method="GET">
+                <input type="text" name="minCost" placeholder="Введите минимальную цену товара"/>
+                <input type="text" name="maxCost" placeholder="Введите максимальную цену товара"/>
+                <input type="submit"/>
+            </form>
+        </div>
+        <br>
+        <h1 class="storeName">Найти товар по минимальной цене:</h1>
+        <br>
+        <div class="textOnCenter">
+            <form th:action="@{/products/find_by_minCost}" method="GET">
+                <input type="text" name="minCost" placeholder="Введите минимальную цену товара"/>
+                <input type="submit"/>
+            </form>
+        </div>
+        <br>
+        <h1 class="storeName">Найти товар по максимальной цене:</h1>
+        <br>
+        <div class="textOnCenter">
+            <form th:action="@{/products/find_by_maxCost}" method="GET">
+                <input type="text" name="maxCost" placeholder="Введите максимальную цену товара"/>
+                <input type="submit"/>
+            </form>
         </div>
     </div>
 </div>
